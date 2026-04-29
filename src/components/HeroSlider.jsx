@@ -9,7 +9,7 @@ const slides = [
     desc: "A comprehensive portfolio of high-quality injectables and oral solid dosage formulations for hospitals worldwide.",
     btn: "View Portfolio",
     link: "/portfolio",
-    img: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGhhcm1hY2V1dGljYWx8ZW58MHx8MHx8fDA%3D"
+    img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVkaWNpbmV8ZW58MHx8MHx8fDA%3D"
   },
   {
     title: "Driven by Science.",
@@ -17,7 +17,7 @@ const slides = [
     desc: "Our research and development efforts focus on creating safe, stable, and effective pharmaceutical products.",
     btn: "Our Science",
     link: "/science",
-    img: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=2000&auto=format&fit=crop"
+    img: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2NpZW5jZXxlbnwwfHwwfHx8MA%3D%3D"
   },
   {
     title: "Partnering for",
