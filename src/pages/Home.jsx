@@ -91,26 +91,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── Stats Banner ──
-      <section className="bg-[#1A202C] py-16">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            {stats.map((stat, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-1">{stat.value}</div>
-                <div className="text-background/70 text-sm font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+
 
       {/* ── Core Competencies ── */}
       <section className="py-24 md:py-32">
@@ -244,31 +225,6 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* ── CTA Banner ──
-      <section className="py-20 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
-        <div className="max-w-[800px] mx-auto px-6 text-center relative z-10">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-background mb-4">Ready to Partner With Us?</h2>
-            <p className="text-background/80 mb-8 leading-relaxed">
-              We are constantly exploring new partnerships for contract manufacturing, out-licensing, and distribution. Let's build something meaningful together.
-            </p>
-            <Link
-              to="/about"
-              className="inline-flex items-center space-x-2 bg-background text-primary px-8 py-3.5 rounded-full font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group"
-            >
-              <span>Learn More About Us</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </motion.div>
-        </div>
-      </section> */}
 
       <ContactForm />
 

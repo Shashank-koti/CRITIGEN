@@ -3,6 +3,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
+import CritigenPharma from './pages/CritigenPharma';
+import VisionMission from './pages/VisionMission';
 import Portfolio from './pages/Portfolio';
 import Science from './pages/Science';
 import Infrastructure from './pages/Infrastructure';
@@ -18,6 +20,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/about/critigen-pharma" element={<CritigenPharma />} />
+            <Route path="/about/vision-mission" element={<VisionMission />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/science" element={<Science />} />
             <Route path="/infrastructure" element={<Infrastructure />} />
