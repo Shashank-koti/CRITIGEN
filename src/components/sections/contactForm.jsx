@@ -34,7 +34,7 @@ const ContactForm = () => {
                 ([key, value]) => sheetPayload.append(key, value)
             );
 
-            const sGOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbw7GjdxwWQBWiOgAZk-_vft8e9ZSZgHIgp0HLwEyd2qF5sD9ncFEoL1zKumIN5AY6mBpQ/exec";
+            const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbw7GjdxwWQBWiOgAZk-_vft8e9ZSZgHIgp0HLwEyd2qF5sD9ncFEoL1zKumIN5AY6mBpQ/exec";
             console.log(sheetPayload.toString());
 
             await fetch(GOOGLE_SHEET_URL, {
@@ -108,7 +108,7 @@ const ContactForm = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-sm text-textPrimary mb-0.5">Phone</h4>
-                                    <p className="text-textSecondary text-sm">8522801254</p>
+                                    <p className="text-textSecondary text-sm">+91 8522801254</p>
                                 </div>
                             </div>
 

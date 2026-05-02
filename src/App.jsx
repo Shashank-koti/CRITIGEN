@@ -9,7 +9,7 @@ import Portfolio from './pages/Portfolio';
 import Science from './pages/Science';
 import Infrastructure from './pages/Infrastructure';
 import Careers from './pages/Careers';
-import Placeholder from './pages/Placeholder';
+import Contact from "./pages/contact"
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
             <Route path="/science" element={<Science />} />
             <Route path="/infrastructure" element={<Infrastructure />} />
             <Route path="/careers" element={<Careers />} />
-            <Route path="/contact" element={<Placeholder title="Contact Us" />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />

@@ -52,11 +52,11 @@ const Footer = () => {
             </li>
             <li className="flex items-center">
               <Phone size={16} className="mr-2 text-primary shrink-0" />
-              <span className="text-background/80">CRITIGEN PHARMA PRIVATE LIMITED</span>
+              <span className="text-background/80">+91 8522801254</span>
             </li>
             <li className="flex items-center">
               <Mail size={16} className="mr-2 text-primary shrink-0" />
-              <span className="text-background/80">critigenpharma@gmail.com</span>
+              <span className="text-background/80">[EMAIL_ADDRESS]</span>
             </li>
           </ul>
         </div>

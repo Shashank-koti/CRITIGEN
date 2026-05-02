@@ -55,7 +55,7 @@ const Navbar = () => {
     { name: 'Infrastructure', path: '/infrastructure' },
     { name: 'Careers', path: '/careers' },
     { name: "Contact", path: "/contact" }
-  ];
+  ];    
 
   const aboutSubLinks = [
     { name: 'Critigen Pharma', path: '/about/critigen-pharma' },
