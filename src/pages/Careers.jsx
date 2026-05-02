@@ -34,7 +34,7 @@ const Careers = () => {
       </section>
 
       {/* Culture Section */}
-      <section className="py-24 max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-24 max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -57,7 +57,7 @@ const Careers = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4"
         >
           <div className="bg-card rounded-2xl h-48 overflow-hidden">
             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400" alt="Team" className="w-full h-full object-cover" />

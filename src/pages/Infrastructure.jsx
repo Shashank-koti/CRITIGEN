@@ -34,7 +34,7 @@ const Infrastructure = () => {
 
       {/* Main Content */}
       <section className="py-24 max-w-[1200px] mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-16 md:mb-24">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -56,7 +56,7 @@ const Infrastructure = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="h-[400px] rounded-2xl shadow-lg overflow-hidden relative"
+            className="h-[300px] md:h-[400px] rounded-2xl shadow-lg overflow-hidden relative"
           >
             <img
               src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8SW5mcmFzdHJ1Y3R1cmUlMjBwaGFybWFjdXRpY2FsfGVufDB8fDB8fHww"

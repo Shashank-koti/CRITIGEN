@@ -33,7 +33,7 @@ const Science = () => {
       </section>
 
       {/* Science-Driven Approach */}
-      <section className="py-24 max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-24 max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -59,7 +59,7 @@ const Science = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="h-[500px] bg-section rounded-2xl shadow-sm overflow-hidden"
+          className="h-[300px] md:h-[500px] bg-section rounded-2xl shadow-sm overflow-hidden"
         >
           <img
             src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=800"
@@ -71,13 +71,13 @@ const Science = () => {
 
       {/* Research & Development */}
       <section className="py-24 bg-section">
-        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="h-[500px] bg-background rounded-2xl shadow-sm overflow-hidden order-2 md:order-1"
+            className="h-[300px] md:h-[500px] bg-background rounded-2xl shadow-sm overflow-hidden order-2 md:order-1"
           >
             <img
               src="https://plus.unsplash.com/premium_photo-1676325102413-f60b77fc1566?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fFJlc2VhcmNoJTIwJTI2JTIwRGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D"

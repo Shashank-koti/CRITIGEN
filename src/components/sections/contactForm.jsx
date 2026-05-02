@@ -1,7 +1,60 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, ArrowRight, ShieldCheck, Globe2, Clock } from 'lucide-react';
+import { useState } from 'react';
 
 const ContactForm = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        country: "",
+        message: ""
+    });
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!formData.name || !formData.email || !formData.phone || !formData.country || !formData.message) {
+            return alert("Please fill in all required fields.");
+        }
+        if (!formData.email.includes("@")) {
+            return alert("Please enter a valid email address.");
+        }
+
+        setLoading(true);
+
+        try {
+            const sheetPayload = new URLSearchParams();
+            Object.entries({ ...formData, formType: "contact", secret: "critigen_secure_2026" }).forEach(
+                ([key, value]) => sheetPayload.append(key, value)
+            );
+
+            const sGOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbw7GjdxwWQBWiOgAZk-_vft8e9ZSZgHIgp0HLwEyd2qF5sD9ncFEoL1zKumIN5AY6mBpQ/exec";
+            console.log(sheetPayload.toString());
+
+            await fetch(GOOGLE_SHEET_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: sheetPayload.toString(),
+            });
+
+            alert("Message sent successfully!");
+            setFormData({ name: "", email: "", phone: "", country: "", message: "" });
+        } catch (error) {
+            alert("Something went wrong. Please try again.");
+        } finally {
+            setLoading(false);
+        }
+    };
+
     const fadeInUp = {
         hidden: { opacity: 0, y: 30 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -44,7 +97,7 @@ const ContactForm = () => {
                                 <div>
                                     <h4 className="font-semibold text-sm text-textPrimary mb-0.5">Headquarters</h4>
                                     <p className="text-textSecondary text-sm leading-relaxed">
-                                        123 Pharma Avenue, Innovation Park, Mumbai, MH 400001, India
+                                        3rd Flr, 15-31-1/HIG-V-71, Phase V, Kukatpally, KPHB Colony, Tirumalagiri, Hyderabad- 500085, Telangana
                                     </p>
                                 </div>
                             </div>
@@ -55,7 +108,7 @@ const ContactForm = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-sm text-textPrimary mb-0.5">Phone</h4>
-                                    <p className="text-textSecondary text-sm">+91 (800) 123-4567</p>
+                                    <p className="text-textSecondary text-sm">8522801254</p>
                                 </div>
                             </div>
 
@@ -65,7 +118,7 @@ const ContactForm = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-semibold text-sm text-textPrimary mb-0.5">Email</h4>
-                                    <p className="text-textSecondary text-sm">contact@critigenpharma.com</p>
+                                    <p className="text-textSecondary text-sm">critigenpharma@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -100,14 +153,17 @@ const ContactForm = () => {
                             <h3 className="text-xl font-bold text-textPrimary mb-1">Send us a Message</h3>
                             <p className="text-sm text-textLight mb-8">We'll get back to you within 24 hours.</p>
 
-                            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                            <form className="space-y-5" onSubmit={handleSubmit}>
                                 {/* Name */}
                                 <div>
                                     <label htmlFor="contact-name" className="block text-xs font-semibold text-textSecondary uppercase tracking-wider mb-2">Full Name <span className="text-red-400">*</span></label>
                                     <input
                                         type="text"
                                         id="contact-name"
-                                        placeholder="John Doe"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
                                         className="w-full px-4 py-3 bg-section border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all placeholder:text-textLight"
                                     />
                                 </div>
@@ -119,7 +175,10 @@ const ContactForm = () => {
                                         <input
                                             type="email"
                                             id="contact-email"
-                                            placeholder="john@example.com"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            required
                                             className="w-full px-4 py-3 bg-section border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all placeholder:text-textLight"
                                         />
                                     </div>
@@ -130,7 +189,10 @@ const ContactForm = () => {
                                         <input
                                             type="tel"
                                             id="contact-mobile"
-                                            placeholder="+91 98765 43210"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            required
                                             className="w-full px-4 py-3 bg-section border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all placeholder:text-textLight"
                                         />
                                     </div>
@@ -138,21 +200,16 @@ const ContactForm = () => {
 
                                 {/* Country */}
                                 <div>
-                                    <label htmlFor="contact-country" className="block text-xs font-semibold text-textSecondary uppercase tracking-wider mb-2">Country</label>
-                                    <select
+                                    <label htmlFor="contact-country" className="block text-xs font-semibold text-textSecondary uppercase tracking-wider mb-2">Country <span className="text-red-400">*</span></label>
+                                    <input
+                                        type="text"
                                         id="contact-country"
-                                        defaultValue=""
-                                        className="w-full px-4 py-3 bg-section border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all appearance-none text-textSecondary"
-                                    >
-                                        <option value="" disabled>Select your country</option>
-                                        <option value="in">India</option>
-                                        <option value="us">United States</option>
-                                        <option value="uk">United Kingdom</option>
-                                        <option value="de">Germany</option>
-                                        <option value="au">Australia</option>
-                                        <option value="ca">Canada</option>
-                                        <option value="other">Other</option>
-                                    </select>
+                                        name="country"
+                                        value={formData.country}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-4 py-3 bg-section border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all placeholder:text-textLight"
+                                    />
                                 </div>
 
                                 {/* Message */}
@@ -160,6 +217,10 @@ const ContactForm = () => {
                                     <label htmlFor="contact-message" className="block text-xs font-semibold text-textSecondary uppercase tracking-wider mb-2">Message <span className="text-red-400">*</span></label>
                                     <textarea
                                         id="contact-message"
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        required
                                         rows="4"
                                         placeholder="Tell us about your requirements..."
                                         className="w-full px-4 py-3 bg-section border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none placeholder:text-textLight"
@@ -169,10 +230,11 @@ const ContactForm = () => {
                                 {/* Submit */}
                                 <button
                                     type="submit"
-                                    className="w-full px-6 py-3.5 bg-primary hover:bg-primary/90 text-background font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group"
+                                    disabled={loading}
+                                    className="w-full px-6 py-3.5 bg-primary hover:bg-primary/90 text-background font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group disabled:opacity-70 disabled:cursor-not-allowed"
                                 >
-                                    <span>Send Message</span>
-                                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                                    <span>{loading ? "Sending..." : "Send Message"}</span>
+                                    {!loading && <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />}
                                 </button>
 
                                 <p className="text-center text-xs text-textLight pt-1">

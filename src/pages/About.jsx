@@ -41,7 +41,7 @@ const About = () => {
       </section> */}
 
       {/* Who We Are */}
-      <section className="py-20 max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <section className="py-20 max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -67,7 +67,7 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="h-[400px] bg-card rounded-2xl shadow-lg overflow-hidden relative"
+          className="h-[300px] md:h-[400px] bg-card rounded-2xl shadow-lg overflow-hidden relative"
         >
           <img
             src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800"
@@ -123,7 +123,7 @@ const About = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section className="py-20 max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-12">
+      <section className="py-20 max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-8 md:gap-12">
         <motion.div
           initial="hidden"
           whileInView="visible"

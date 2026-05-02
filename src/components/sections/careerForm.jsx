@@ -22,9 +22,9 @@ const Careers = () => {
         company: "",
         currentSalary: "",
         expectedSalary: "",
+        resumeUrl: "",
     });
 
-    const [file, setFile] = useState(null);
     const [loading, setLoading] = useState(false);
 
     // ✅ HANDLE INPUT
@@ -36,46 +36,32 @@ const Careers = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!file) return alert("Please upload resume");
+        if (!formData.resumeUrl) return alert("Please provide a Google Drive link to your resume");
         if (!formData.email.includes("@")) return alert("Invalid email");
         if (formData.phone.length < 10) return alert("Invalid phone number");
-
-        if (file.size > 5 * 1024 * 1024) {
-            return alert("File must be less than 5MB");
-        }
 
         setLoading(true);
 
         try {
-            const cloudData = new FormData();
-            cloudData.append("file", file);
-            cloudData.append("upload_preset", "resume_upload"); // your preset
-
-            const cloudRes = await fetch(
-                "https://api.cloudinary.com/v1_1/dsv556z7n/auto/upload",
-                {
-                    method: "POST",
-                    body: cloudData,
-                }
-            );
-
-            const cloudJson = await cloudRes.json();
-            const resumeUrl = cloudJson.secure_url;
-
-            console.log("RESUME URL = ", resumeUrl);
-
             // 📊 Send to Google Sheets
-            const sheetPayload = new FormData();
-            Object.entries({ ...formData, resumeUrl, secret: "critigen_secure_2026" }).forEach(
+            const sheetPayload = new URLSearchParams();
+            Object.entries({ ...formData, secret: "critigen_secure_2026" }).forEach(
                 ([key, value]) => sheetPayload.append(key, value)
             );
 
-            await fetch("https://script.google.com/macros/s/AKfycbxR9uGAJyfUSXACsWMkcdT4v0jGhLOedSDqrumHPuviNJ_-379m8k35MKFxNoJei0HUGw/exec", {
+            console.log("FORM DATA = ", formData);
+            console.log("SHEET PAYLOAD = ", sheetPayload.toString());
+
+            await fetch("https://script.google.com/macros/s/AKfycbxm2IKZkYBtnsP8_olK-BYbTCZHuRHcdbdkHv6iBzI2tp8A_gFSXP8KV0z6aWvYx2lK/exec", {
                 method: "POST",
                 mode: "no-cors",
-                body: sheetPayload,
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: sheetPayload.toString(),
             });
 
+            // With no-cors, we can't read the response. Assuming success if fetch succeeds.
             alert("Application submitted successfully!");
 
             // reset
@@ -91,9 +77,8 @@ const Careers = () => {
                 company: "",
                 currentSalary: "",
                 expectedSalary: "",
+                resumeUrl: "",
             });
-
-            setFile(null);
 
         } catch (err) {
             alert("Something went wrong");
@@ -197,7 +182,7 @@ const Careers = () => {
                                             type="text" className="w-full pl-10 pr-4 py-3 bg-card border border-border rounded-lg" />
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="space-y-2">
                                         <label className="text-sm font-medium text-textSecondary">Current Salary <span className="text-xs">(Lakhs)</span></label>
                                         <input name="currentSalary" value={formData.currentSalary} onChange={handleChange} placeholder="Current Salary" className="w-full px-4 py-3 bg-card border border-border rounded-lg" />
@@ -209,24 +194,21 @@ const Careers = () => {
                                 </div>
                             </div>
 
-                            {/* FILE */}
-                            <div className="pt-4">
-                                <label className="text-sm font-medium text-textSecondary block mb-2">Upload Resume *</label>
-
+                            {/* RESUME LINK */}
+                            <div className="pt-4 border-t border-border mt-6">
+                                <label className="text-sm font-medium text-textSecondary block mb-2">Resume Google Drive Link *</label>
                                 <input
-                                    id="resumeUpload"
-                                    type="file"
-                                    accept=".pdf,.doc,.docx"
-                                    className="hidden"
-                                    onChange={(e) => setFile(e.target.files[0])}
+                                    name="resumeUrl"
+                                    value={formData.resumeUrl}
+                                    onChange={handleChange}
+                                    type="url"
+                                    placeholder="https://drive.google.com/file/d/..."
+                                    className="w-full px-4 py-3 bg-card border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-colors"
+                                    required
                                 />
-
-                                <label htmlFor="resumeUpload">
-                                    <div className="border-2 border-dashed border-border rounded-lg p-8 text-center bg-card hover:bg-border/50 cursor-pointer">
-                                        <Upload className="mx-auto h-12 w-12 mb-4" />
-                                        Click to upload
-                                    </div>
-                                </label>
+                                <p className="text-xs text-textLight mt-2">
+                                    Please ensure the link access is set to "Anyone with the link can view".
+                                </p>
                             </div>
 
                             <div className="pt-6">

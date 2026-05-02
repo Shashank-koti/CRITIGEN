@@ -47,15 +47,16 @@ const Footer = () => {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start">
               <MapPin size={16} className="mr-2 text-primary shrink-0 mt-0.5" />
-              <span className="text-background/80">123 Pharma Avenue, Biotech Park, Global City</span>
+              <span className="text-background/80">
+                3rd Flr, 15-31-1/HIG-V-71, Phase V, Kukatpally, KPHB Colony, Tirumalagiri, Hyderabad- 500085, Telangana</span>
             </li>
             <li className="flex items-center">
               <Phone size={16} className="mr-2 text-primary shrink-0" />
-              <span className="text-background/80">+1 (800) 123-4567</span>
+              <span className="text-background/80">CRITIGEN PHARMA PRIVATE LIMITED</span>
             </li>
             <li className="flex items-center">
               <Mail size={16} className="mr-2 text-primary shrink-0" />
-              <span className="text-background/80">contact@critigenpharma.com</span>
+              <span className="text-background/80">critigenpharma@gmail.com</span>
             </li>
           </ul>
         </div>

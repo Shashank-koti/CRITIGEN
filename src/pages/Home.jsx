@@ -37,7 +37,7 @@ const Home = () => {
 
       {/* ── Company Intro ── */}
       <section className="py-24 md:py-32">
-        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -74,7 +74,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative h-[300px] md:h-[480px] rounded-2xl overflow-hidden shadow-xl">
               <img
                 src="https://plus.unsplash.com/premium_photo-1661770294094-06167872e079?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cGhhcm1hY2V1dGljYWwlMjBpbmR1c3RyeXxlbnwwfHwwfHx8MA%3D%3D"
                 alt="Pharma Facility"
@@ -132,7 +132,7 @@ const Home = () => {
       {/* ── Therapeutic Areas ── */}
       <section className="py-24 md:py-32 bg-section">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -177,7 +177,7 @@ const Home = () => {
 
       {/* ── Global Presence ── */}
       <section className="py-24 md:py-32">
-        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -189,7 +189,7 @@ const Home = () => {
               <img
                 src="https://images.unsplash.com/photo-1584931423298-c576fda54bd2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8SGVhbHRoY2FyZSUyMFdvcmxkd2lkZXxlbnwwfHwwfHx8MA%3D%3D"
                 alt="Global Reach"
-                className="w-full h-[400px] object-cover"
+                className="w-full h-[300px] md:h-[400px] object-cover"
               />
             </div>
           </motion.div>

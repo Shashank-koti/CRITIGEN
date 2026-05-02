@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { HeartPulse, Shield, Syringe, Globe2, Award, Users, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import D1 from "../assets/D1.jpeg";
+import D1 from "../assets/D1.png";
 import D2 from "../assets/D2.jpeg";
 
 

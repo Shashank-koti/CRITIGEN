@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import Logo from "../assets/logo1.png"
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -76,7 +77,7 @@ const Navbar = () => {
         {/* Logo Section - Start */}
         <div className="flex-1 flex justify-start">
           <Link to="/" className={`${scrolled || isDarkPage ? 'text-textPrimary' : 'text-background'} text-2xl font-bold tracking-tight transition-colors`}>
-            CRITIGEN
+            <img src={Logo} alt="" className='w-32 h-16' />
           </Link>
         </div>
 
@@ -152,12 +153,14 @@ const Navbar = () => {
         {/* CTA & Mobile Menu - End */}
         <div className="flex-1 flex justify-end items-center">
           <div className="hidden lg:block">
-            <Link
-              to=""
+            <a
+              href="https://wa.me/918522801254"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary hover:bg-primary/90 text-background px-7 py-2.5 rounded-full shadow-md hover:shadow-lg hover:-translate-y-0.5 text-sm font-semibold transition-all duration-300"
             >
-              Partner With Us
-            </Link>
+              Chat With Us
+            </a>
           </div>
 
           <button
@@ -230,13 +233,15 @@ const Navbar = () => {
                 </Link>
               ))}
 
-              <Link
-                to="/contact"
+              <a
+                href="https://wa.me/918522801254"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-primary hover:bg-primary/90 text-background px-6 py-3 rounded-full text-center text-sm font-semibold mt-4 shadow-md transition-all duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Partner With Us
-              </Link>
+                Chat With Us
+              </a>
             </div>
           </motion.div>
         )}
