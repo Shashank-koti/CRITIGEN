@@ -97,7 +97,7 @@ const ContactForm = () => {
                                 <div>
                                     <h4 className="font-semibold text-sm text-textPrimary mb-0.5">Headquarters</h4>
                                     <p className="text-textSecondary text-sm leading-relaxed">
-                                        3rd Flr, 15-31-1/HIG-V-71, Phase V, Kukatpally, KPHB Colony, Tirumalagiri, Hyderabad- 500085, Telangana
+                                        Plot No. 373, Road Number 8, Kavuturi Residency, Kakatiya Hills, Madhapur, Hyderabad, Telangana 500033
                                     </p>
                                 </div>
                             </div>

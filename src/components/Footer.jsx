@@ -48,7 +48,7 @@ const Footer = () => {
             <li className="flex items-start">
               <MapPin size={16} className="mr-2 text-primary shrink-0 mt-0.5" />
               <span className="text-background/80">
-                3rd Flr, 15-31-1/HIG-V-71, Phase V, Kukatpally, KPHB Colony, Tirumalagiri, Hyderabad- 500085, Telangana</span>
+                Plot No. 373, Road Number 8, Kavuturi Residency, Kakatiya Hills, Madhapur, Hyderabad, Telangana 500033</span>
             </li>
             <li className="flex items-center">
               <Phone size={16} className="mr-2 text-primary shrink-0" />

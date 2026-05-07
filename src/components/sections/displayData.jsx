@@ -15,7 +15,7 @@ const DisplayData = () => {
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Header & Search */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -27,7 +27,7 @@ const DisplayData = () => {
             </h2>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -38,7 +38,7 @@ const DisplayData = () => {
             </div>
             <input
               type="text"
-              placeholder="Search by Product, Generic Name, Type..."
+              placeholder="Search by Brand Name, Generic Name, Dosage Form..."
               className="w-full pl-11 pr-4 py-3.5 bg-section border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300"
               value={searchTerm}
               onChange={handleSearch}
@@ -49,11 +49,11 @@ const DisplayData = () => {
         {/* Data Tables */}
         <div className="space-y-16">
           {portfolioData.map((categoryData, index) => {
-            const filteredProducts = categoryData.products.filter(item => 
-              item.product.toLowerCase().includes(searchTerm) ||
-              item.genericName.toLowerCase().includes(searchTerm) ||
-              item.type.toLowerCase().includes(searchTerm) ||
-              item.pack.toLowerCase().includes(searchTerm)
+            const filteredProducts = categoryData.products.filter(item =>
+              (item.brandName?.toLowerCase() || '').includes(searchTerm) ||
+              (item.genericName?.toLowerCase() || '').includes(searchTerm) ||
+              (item.dosageForm?.toLowerCase() || '').includes(searchTerm) ||
+              (item.pack?.toLowerCase() || '').includes(searchTerm)
             );
 
             if (filteredProducts.length === 0) return null;
@@ -80,27 +80,27 @@ const DisplayData = () => {
                   <table className="w-full text-left border-collapse min-w-[800px]">
                     <thead>
                       <tr className="bg-section text-textSecondary text-[13px] uppercase tracking-wider font-semibold">
-                        <th className="px-6 py-4 border-b border-border w-[25%]">Product</th>
-                        <th className="px-6 py-4 border-b border-border w-[40%]">Generic Name</th>
-                        <th className="px-6 py-4 border-b border-border w-[20%]">Type</th>
-                        <th className="px-6 py-4 border-b border-border w-[15%]">Pack</th>
+                        <th className="px-6 py-4 border-b border-border w-[25%] min-w-[150px]">Brand Name</th>
+                        <th className="px-6 py-4 border-b border-border w-[40%] min-w-[250px]">Generic Name</th>
+                        <th className="px-6 py-4 border-b border-border w-[20%] min-w-[150px]">Dosage Form</th>
+                        <th className="px-6 py-4 border-b border-border w-[15%] min-w-[100px]">Pack</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-border text-[15px] text-textSecondary">
                       {filteredProducts.map((item, idx) => (
-                        <tr 
-                          key={idx} 
+                        <tr
+                          key={idx}
                           className="hover:bg-primary/[0.02] transition-colors duration-200 group"
                         >
                           <td className="px-6 py-4 font-semibold text-textPrimary group-hover:text-primary transition-colors">
-                            {item.product}
+                            {item.brandName}
                           </td>
                           <td className="px-6 py-4 leading-relaxed">
                             {item.genericName}
                           </td>
                           <td className="px-6 py-4">
                             <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary border border-secondary/20">
-                              {item.type}
+                              {item.dosageForm}
                             </span>
                           </td>
                           <td className="px-6 py-4 font-medium text-textPrimary">
@@ -115,26 +115,26 @@ const DisplayData = () => {
             );
           })}
 
-          {portfolioData.every(cat => 
-            cat.products.filter(item => 
-              item.product.toLowerCase().includes(searchTerm) ||
-              item.genericName.toLowerCase().includes(searchTerm) ||
-              item.type.toLowerCase().includes(searchTerm) ||
-              item.pack.toLowerCase().includes(searchTerm)
+          {portfolioData.every(cat =>
+            cat.products.filter(item =>
+              (item.brandName?.toLowerCase() || '').includes(searchTerm) ||
+              (item.genericName?.toLowerCase() || '').includes(searchTerm) ||
+              (item.dosageForm?.toLowerCase() || '').includes(searchTerm) ||
+              (item.pack?.toLowerCase() || '').includes(searchTerm)
             ).length === 0
           ) && (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20 bg-section rounded-2xl border border-dashed border-border"
-            >
-              <Search className="w-10 h-10 text-textLight mx-auto mb-4 opacity-50" />
-              <h3 className="text-xl font-bold text-textPrimary mb-2">No products found</h3>
-              <p className="text-textSecondary">
-                We couldn't find any products matching "{searchTerm}". Try adjusting your search.
-              </p>
-            </motion.div>
-          )}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-center py-20 bg-section rounded-2xl border border-dashed border-border"
+              >
+                <Search className="w-10 h-10 text-textLight mx-auto mb-4 opacity-50" />
+                <h3 className="text-xl font-bold text-textPrimary mb-2">No products found</h3>
+                <p className="text-textSecondary">
+                  We couldn't find any products matching "{searchTerm}". Try adjusting your search.
+                </p>
+              </motion.div>
+            )}
         </div>
       </div>
     </section>

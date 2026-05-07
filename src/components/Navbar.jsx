@@ -55,7 +55,7 @@ const Navbar = () => {
     { name: 'Infrastructure', path: '/infrastructure' },
     { name: 'Careers', path: '/careers' },
     { name: "Contact", path: "/contact" }
-  ];    
+  ];
 
   const aboutSubLinks = [
     { name: 'Critigen Pharma', path: '/about/critigen-pharma' },
@@ -70,7 +70,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled || isDarkPage ? 'bg-background/90 backdrop-blur-md shadow-sm border-b border-border py-4' : 'bg-transparent py-6'
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled || isDarkPage ? 'bg-background/90 backdrop-blur-md shadow-sm border-b border-border py-4' : 'bg-transparent py-5'
         }`}
     >
       <div className=" mx-auto px-6 flex justify-between items-center w-full">

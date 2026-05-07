@@ -23,8 +23,8 @@ const CritigenPharma = () => {
   ];
 
   const directors = [
-    { name: "Middey Janani", role: "Promoter & Director", url: D2 },
-    { name: "Venkat Ram Jagarlamudi", role: "Promoter & Director", url: D1 }
+    { name: "Venkat Ram Jagarlamudi", role: "Promoter & Director", url: D1 },
+    { name: "Janani", role: "Promoter & Director", url: D2 }
   ];
 
   const globalReach = [
