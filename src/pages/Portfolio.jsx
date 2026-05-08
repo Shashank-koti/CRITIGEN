@@ -70,9 +70,9 @@ const Portfolio = () => {
             transition={{ duration: 0.8 }}
             className="max-w-[650px]"
           >
-            <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-primary mb-5 bg-primary/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-primary/20">
+            {/* <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-primary mb-5 bg-primary/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-primary/20">
               Our Portfolio
-            </span>
+            </span> */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Comprehensive <span className="text-primary">Pharmaceutical</span> Formulations
             </h1>

@@ -82,7 +82,7 @@ const DisplayData = () => {
                       <tr className="bg-section text-textSecondary text-[13px] uppercase tracking-wider font-semibold">
                         <th className="px-6 py-4 border-b border-border w-[25%] min-w-[150px]">Brand Name</th>
                         <th className="px-6 py-4 border-b border-border w-[40%] min-w-[250px]">Generic Name</th>
-                        <th className="px-6 py-4 border-b border-border w-[20%] min-w-[150px]">Dosage Form</th>
+                        <th className="px-6 py-4 border-b border-border w-[25%] min-w-[150px]">Dosage Form</th>
                         <th className="px-6 py-4 border-b border-border w-[15%] min-w-[100px]">Pack</th>
                       </tr>
                     </thead>

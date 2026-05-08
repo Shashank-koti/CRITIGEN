@@ -24,7 +24,7 @@ const VisionMission = () => {
         </div>
         <div className="relative z-10 max-w-[1200px] mx-auto px-6 w-full">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-[700px]">
-            <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-primary mb-4 bg-primary/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-primary/20">Our Purpose</span>
+            {/* <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-primary mb-4 bg-primary/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-primary/20">Our Purpose</span> */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Vision & <span className="text-primary">Mission</span>
             </h1>

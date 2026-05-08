@@ -13,10 +13,6 @@ const Footer = () => {
           <p className="text-xs leading-relaxed mb-4 text-background/70">
             Advancing critical care and improving lives globally through precision, innovation, and unwavering commitment to quality.
           </p>
-          <div className="flex space-x-4">
-            <a href="#" className="text-background/60 hover:text-primary transition-colors"><Globe size={18} /></a>
-            <a href="#" className="text-background/60 hover:text-primary transition-colors"><MessageCircle size={18} /></a>
-          </div>
         </div>
 
         {/* Links Col */}
@@ -56,7 +52,7 @@ const Footer = () => {
             </li>
             <li className="flex items-center">
               <Mail size={16} className="mr-2 text-primary shrink-0" />
-              <span className="text-background/80">[EMAIL_ADDRESS]</span>
+              <span className="text-background/80">critigenpharma@gmail.com</span>
             </li>
           </ul>
         </div>

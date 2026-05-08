@@ -24,13 +24,6 @@ const Home = () => {
     { icon: <Pill size={24} />, title: "Anti-Infectives", desc: "Broad-spectrum antibiotics and anti-microbials for hospital-grade treatment.", color: "from-amber-500/10 to-yellow-500/5" },
   ];
 
-  const stats = [
-    { value: "50+", label: "Countries Served" },
-    { value: "200+", label: "Product Registrations" },
-    { value: "4", label: "Manufacturing Units" },
-    { value: "10M+", label: "Lives Touched Yearly" },
-  ];
-
   return (
     <div className="w-full bg-background">
       <HeroSlider />
@@ -207,21 +200,7 @@ const Home = () => {
             <p className="text-textSecondary leading-relaxed mb-8">
               Our products are developed and manufactured in compliance with stringent quality standards. We serve regions including Europe, Latin America, Asia, and Africa with reliability and consistency.
             </p>
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  className="bg-section p-4 rounded-xl border border-border"
-                >
-                  <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                  <div className="text-textSecondary text-xs font-medium mt-0.5">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
+
           </motion.div>
         </div>
       </section>

@@ -45,7 +45,7 @@ const Infrastructure = () => {
               Modern Manufacturing for Global Demands
             </h2>
             <p className="text-textSecondary text-lg leading-relaxed mb-6">
-              At Critigen Pharma, we have invested heavily in building modern manufacturing infrastructure designed specifically to meet and exceed evolving global pharmaceutical standards.
+              At Critigen Pharma, we are committed to building modern manufacturing infrastructure designed specifically to meet and exceed evolving global pharmaceutical standards.
             </p>
             <p className="text-textSecondary text-lg leading-relaxed">
               Our facilities are developed with a sharp focus on operational efficiency, unyielding compliance, and long-term scalability, ensuring the consistent and safe production of high-quality formulations across critical care and specialty segments.
