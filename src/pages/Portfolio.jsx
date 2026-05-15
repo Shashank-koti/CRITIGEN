@@ -19,7 +19,7 @@ const Portfolio = () => {
       icon: <HeartPulse className="w-7 h-7" />,
       image: "/cardiology.png",
       desc: "Advanced therapeutic solutions designed to support cardiovascular health and manage complex cardiac conditions with precision.",
-      items: ["Anti-hypertensives", "Statins", "Beta Blockers", "Anti-arrhythmics"],
+      items: ["Anticoagulants", "Anti-arrhythmics", "Cardiac Support"],
       accent: "from-rose-500 to-red-600"
     },
     {
@@ -27,7 +27,7 @@ const Portfolio = () => {
       icon: <Activity className="w-7 h-7" />,
       image: "/critical-care.png",
       desc: "High-performance formulations developed specifically for intensive care units and emergency medical interventions.",
-      items: ["Broad-spectrum Antibiotics", "Life-saving Injectables", "Vasopressors", "Fluid Management"],
+      items: ["Anti-infectives", "Vasopressors", "Critical Care Injectables"],
       accent: "from-blue-500 to-indigo-600"
     },
     {
@@ -35,17 +35,9 @@ const Portfolio = () => {
       icon: <Syringe className="w-7 h-7" />,
       image: "/anesthesia.png",
       desc: "Safe, consistent, and effective anesthetics and pain management solutions for surgical and post-operative care.",
-      items: ["General Anesthetics", "Local Anesthetics", "Opioid Analgesics", "Muscle Relaxants"],
+      items: ["General Anesthetics", "Muscle Relaxants", "Pain Management"],
       accent: "from-teal-500 to-cyan-600"
     },
-    {
-      title: "Oral Solid Dosages",
-      icon: <Pill className="w-7 h-7" />,
-      image: "/oral-dosage.png",
-      desc: "A wide range of reliable and bioavailable tablets and capsules covering various therapeutic segments.",
-      items: ["Anti-infectives", "Gastrointestinal", "Neurology", "Endocrinology"],
-      accent: "from-amber-500 to-orange-600"
-    }
   ];
 
   return (
@@ -73,7 +65,7 @@ const Portfolio = () => {
             {/* <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-primary mb-5 bg-primary/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-primary/20">
               Our Portfolio
             </span> */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 mt-6">
               Comprehensive <span className="text-primary">Pharmaceutical</span> Formulations
             </h1>
             <p className="text-white/75 text-lg md:text-xl leading-relaxed max-w-[500px]">
@@ -138,7 +130,11 @@ const Portfolio = () => {
               <motion.div
                 key={idx}
                 variants={fadeInUp}
-                className="group bg-background rounded-2xl border border-border overflow-hidden hover:border-primary/20 hover:shadow-[0_16px_48px_rgba(58,124,140,0.1)] transition-all duration-500"
+                className={`group bg-background rounded-2xl border border-border overflow-hidden hover:border-primary/20 hover:shadow-[0_16px_48px_rgba(58,124,140,0.1)] transition-all duration-500 ${
+                  categories.length % 2 !== 0 && idx === categories.length - 1
+                    ? "md:col-span-2 md:w-[calc(50%-14px)] mx-auto"
+                    : ""
+                }`}
               >
                 {/* Card Image */}
                 <div className="relative h-[220px] overflow-hidden">

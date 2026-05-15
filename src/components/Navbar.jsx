@@ -15,6 +15,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
+    handleScroll(); // Initialize on mount
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -67,8 +68,8 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       className={`fixed w-full z-50 transition-all duration-300 ${scrolled || isDarkPage ? 'bg-background/90 backdrop-blur-md shadow-sm border-b border-border py-4' : 'bg-transparent py-5'
         }`}

@@ -42,7 +42,7 @@ const HeroSlider = () => {
   }, []);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black">
+    <div className="relative h-[100dvh] w-full overflow-hidden bg-black">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -63,7 +63,7 @@ const HeroSlider = () => {
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
               className="text-3xl md:text-5xl font-bold text-accent mb-2"
             >
               {slides[current].title}
@@ -71,7 +71,7 @@ const HeroSlider = () => {
             <motion.h2
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.8 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
               className="text-2xl md:text-4xl font-light text-background"
             >
               {slides[current].subtitle}
@@ -80,7 +80,7 @@ const HeroSlider = () => {
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.85, duration: 0.7 }}
+              transition={{ delay: 0.6, duration: 0.7 }}
               className="mt-5 max-w-[520px] text-background/80 text-sm md:text-base leading-relaxed"
             >
               {slides[current].desc}
@@ -89,7 +89,7 @@ const HeroSlider = () => {
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 1, duration: 0.8 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
               className="mt-8"
             >
               <button

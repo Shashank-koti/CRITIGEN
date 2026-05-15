@@ -31,7 +31,7 @@ const Footer = () => {
           <h4 className="text-background font-semibold mb-4 uppercase tracking-wider text-xs">Portfolio</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/portfolio" className="hover:text-primary transition-colors">Injectables</Link></li>
-            <li><Link to="/portfolio" className="hover:text-primary transition-colors">Oral Solid Dosage</Link></li>
+            <li><Link to="/portfolio" className="hover:text-primary transition-colors">Cardiology</Link></li>
             <li><Link to="/portfolio" className="hover:text-primary transition-colors">Anti-infectives</Link></li>
             <li><Link to="/portfolio" className="hover:text-primary transition-colors">Critical Care</Link></li>
           </ul>

@@ -25,7 +25,7 @@ const VisionMission = () => {
         <div className="relative z-10 max-w-[1200px] mx-auto px-6 w-full">
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="max-w-[700px]">
             {/* <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-primary mb-4 bg-primary/10 backdrop-blur-sm px-4 py-1.5 rounded-full border border-primary/20">Our Purpose</span> */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Vision & <span className="text-primary">Mission</span>
             </h1>
             <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-[550px]">
@@ -56,7 +56,7 @@ const VisionMission = () => {
                     <Eye size={28} className="text-white" />
                   </div>
                   <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary-100/70 mb-3">Our Vision</span>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">A Trusted Global Force in Critical Care</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">A Trusted Global Force in Critical Care</h2>
                   <p className="text-lg md:text-xl leading-relaxed text-white/85">
                     To become a trusted global pharmaceutical company recognized for quality, innovation, and impact in critical care.
                   </p>
@@ -82,7 +82,7 @@ const VisionMission = () => {
                     <Rocket size={28} className="text-white" />
                   </div>
                   <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-blue-100/70 mb-3">Our Mission</span>
-                  <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">Reliable Formulations. Essential Access.</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">Reliable Formulations. Essential Access.</h2>
                   <p className="text-lg md:text-xl leading-relaxed text-white/85">
                     To develop reliable formulations, ensure accessibility of essential medicines, and build long-term value through innovation.
                   </p>

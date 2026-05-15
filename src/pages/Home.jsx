@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FlaskConical, ShieldCheck, Globe2, Activity, HeartPulse, Syringe, Pill, ArrowRight, CheckCircle2 } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
-import ContactForm from '../components/sections/contactForm';
+// import ContactForm from '../components/sections/contactForm';
 
 const Home = () => {
   const fadeInUp = {
@@ -88,7 +88,7 @@ const Home = () => {
 
       {/* ── Core Competencies ── */}
       <section className="py-24 md:py-32">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="max-w-[1400px] mx-auto px-6">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -205,7 +205,7 @@ const Home = () => {
         </div>
       </section>
 
-      <ContactForm />
+      {/* <ContactForm /> */}
 
     </div>
   );
