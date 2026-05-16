@@ -27,7 +27,7 @@ const slides = [
     subtitle: "Better Healthcare.",
     desc: "We collaborate with global healthcare institutions to deliver reliable medicines where they matter most.",
     btn: "About Us",
-    link: "/about",
+    link: "about/critigen-pharma",
     img: Hero3
   }
 ];
