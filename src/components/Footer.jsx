@@ -58,14 +58,12 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-6 mt-8 md:mt-10 pt-6 border-t border-background/10 flex flex-col md:flex-row justify-between items-center text-xs text-background/50">
-        <p className="text-center md:text-left mb-4 md:mb-0">&copy; {new Date().getFullYear()} Critigen Pharma Private Limited . All rights reserved.</p>
-        <div className="flex space-x-6">
-          <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
-          <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
-        </div>
+      <div className="max-w-[1400px] mx-auto px-6 mt-8 md:mt-10 pt-6 border-t border-background/10 flex flex-col md:flex-row justify-center items-center text-xs text-background/50">
+        <p className="text-center md:text-left mb-4 md:mb-0">&copy; {new Date().getFullYear()} Critigen Pharma Private Limited . All rights reserved.
+          <a href="https://www.arccreativemedia.com/" style={{ textDecoration: "none" }} target='_blank' onMouseEnter={(e) => e.target.style.color = "#61a0b2ff"} onMouseLeave={(e) => e.target.style.color = "#94a3b8ff"}> Powered by ARC Creative Media</a>
+        </p>
       </div>
-    </footer>
+    </footer >
   );
 };
 
